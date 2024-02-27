@@ -6,7 +6,7 @@ Este repositorio contiene clases Python que demuestran conceptos de herencia y c
 
 - **clases/**: Contiene las implementaciones de las clases.
   - `class point`: Clase Point para representar coordenadas.
-  - `classrectangle`: Clase Rectangle con métodos para calcular área, perímetro e interferencia.
+  - `class rectangle`: Clase Rectangle con métodos para calcular área, perímetro e interferencia.
   - `class square`: Clase Square que hereda de Rectangle y agrega funcionalidades.
 
 ## Uso
