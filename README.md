@@ -1,4 +1,4 @@
-# Inheritance and Classes in Python
+|# Inheritance and Classes in Python
 
 This repository contains Python classes that demonstrate inheritance and class concepts.
 
