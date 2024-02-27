@@ -1,17 +1,17 @@
-# Herencia y Clases en Python
+# Inheritance and Classes in Python
 
-Este repositorio contiene clases Python que demuestran conceptos de herencia y clases.
+This repository contains Python classes that demonstrate inheritance and class concepts.
 
-## Estructura del Repositorio
+## Repository Structure
 
-- **clases/**: Contiene las implementaciones de las clases.
-  - `class point`: Clase Point para representar coordenadas.
-  - `class rectangle`: Clase Rectangle con métodos para calcular área, perímetro e interferencia.
-  - `class square`: Clase Square que hereda de Rectangle y agrega funcionalidades.
+- **classes/**: Contains the implementations of the classes.
+   - `class point`: Point class to represent coordinates.
+   - `class rectangle`: Rectangle class with methods to calculate area, perimeter and interference.
+   - `class square`: Square class that inherits from Rectangle and adds functionality.
 
-## Uso
+## Use
 
-Se agregó la clase "color" con el único fin de resaltar los subtítulo y ordenar la salida de datos:
+The "color" class was added for the sole purpose of highlighting the subtitles and ordering the data output:
 
 ```python
 import os
@@ -133,4 +133,4 @@ p = point(x, y)
 s.compute_interference_point(p)
 ```
 
-> :shipit: Diego Alejandro Arévalo Guevara. 27 de febrero de 2024.
+> :shipit: Diego Alejandro Arévalo Guevara. February 27, 2024.
