@@ -5,9 +5,9 @@ Este repositorio contiene clases Python que demuestran conceptos de herencia y c
 ## Estructura del Repositorio
 
 - **clases/**: Contiene las implementaciones de las clases.
-  - `point.py`: Clase Point para representar coordenadas.
-  - `rectangle.py`: Clase Rectangle con métodos para calcular área, perímetro e interferencia.
-  - `square.py`: Clase Square que hereda de Rectangle y agrega funcionalidades.
+  - `class point`: Clase Point para representar coordenadas.
+  - `classrectangle`: Clase Rectangle con métodos para calcular área, perímetro e interferencia.
+  - `class square`: Clase Square que hereda de Rectangle y agrega funcionalidades.
 
 ## Uso
 
@@ -132,3 +132,5 @@ y = float(input("\nEnter the y coordinate of the point: "))
 p = point(x, y)
 s.compute_interference_point(p)
 ```
+
+> :shipit: Diego Alejandro Arévalo Guevara. 27 de febrero de 2024.
