@@ -8,11 +8,10 @@ This repository contains Python classes that demonstrate inheritance and class c
    - `class point`: Point class to represent coordinates.
    - `class rectangle`: Rectangle class with methods to calculate area, perimeter and interference.
    - `class square`: Square class that inherits from Rectangle and adds functionality.
+   - `class color`: The "color" class was added for the sole purpose of highlighting the subtitles and ordering the data output.
+   - `class line`: The line class creates a line from given points.
 
 ## Use
-
-The "color" class was added for the sole purpose of highlighting the subtitles and ordering the data output:
-
 ```python
 import os
 
