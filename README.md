@@ -10,6 +10,11 @@ This repository contains Python classes that demonstrate inheritance and class c
    - `class square`: Square class that inherits from Rectangle and adds functionality.
    - `class color`: The "color" class was added for the sole purpose of highlighting the subtitles and ordering the data output.
    - `class line`: The line class creates a line from given points.
+   - `class menuitem`: Represents the name and value of a product.
+   - `class appetizer`: It is a subclass of menuitem and inherits its attributes.
+   - `class main_course`: It is a subclass of menuitem and inherits its attributes.
+   - `class beverage`: It is a subclass of menuitem and inherits its attributes.
+   - `class order`: Create the user's order and give its total value (with discounted value option).
 
 ## Rectangle and square code
 
