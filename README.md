@@ -170,4 +170,79 @@ p = point(x, y)
 s.compute_interference_point(p)
 ```
 
+## Line code
+```python
+import os
+import math
+
+#Limpiar la consola
+os.system("cls")
+
+class color:
+    Purple = "\033[95m"
+    Cyan = "\033[96m"
+    Darkcyan = "\033[36m"
+    Blue = "\033[94m"
+    Green = "\033[92m"
+    Yellow = "\033[93m"
+    Red = "\033[91m"
+    Bold = "\033[1m"
+    Underline = "\033[4m"
+    End = "\033[0m"
+
+    def print_title(title):
+        print(f"{color.Red}{color.Bold}{title.upper()}{color.End}")
+
+class point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+class line(point):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+
+    def compute_length(self, start, end):
+         length = ((end.x - start.x)**2 + (end.y - start.y)**2)**0.5
+         rounded_length = round(length, 2)
+         print(f"\nThe length of the line is: {rounded_length} unidades.")
+
+    def compute_slope(self, start, end):
+        slope = math.degrees(math.atan((end.y - start.y) / (end.x - start.x))).__round__(2)
+        print(f"\nThe slope of the line from the horizontal is: {slope} degrees.")
+
+    def compute_horizontal_cross(self, start, end):
+        if start.y >= 0 and end.y <= 0 or start.y <= 0 and end.y >= 0:
+            print(f"\nThe line crosses the x-axis.")
+        else:
+            print(f"\nThe line does not cross the x-axis.")
+
+    def compute_vertical_cross(self, start, end):
+        if start.x >= 0 and end.x <= 0 or start.x <= 0 and end.x >= 0:
+            print(f"\nThe line crosses the y-axis.\n")
+        else:
+            print(f"\nThe line does not cross the y-axis.\n")
+
+
+# Creación de línea con datos del usuario
+
+color.print_title("\nLine crated with user data")
+start_x = float(input("\nEnter the x coordinate of the start point: "))
+start_y = float(input("\nEnter the y coordinate of the start point: "))
+end_x = float(input("\nEnter the x coordinate of the end point: "))
+end_y = float(input("\nEnter the y coordinate of the end point: "))
+start = point(start_x, start_y)
+end = point(end_x, end_y)
+l = line(start, end)
+print(f"\nStart point: {l.start.x, l.start.y}")
+print(f"\nEnd point: {l.end.x, l.end.y}")
+l.compute_length(start, end)
+l.compute_slope(start, end) 
+l.compute_horizontal_cross(start, end)
+l.compute_vertical_cross(start, end)
+```
+## Restaurant scenario code
+
 > :shipit: Diego Alejandro Arévalo Guevara. February 27, 2024.
