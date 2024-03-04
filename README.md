@@ -1,4 +1,4 @@
-# Inheritance and Classes in Python
+# Reto #3 // Diego Arévalo
 
 This repository contains Python classes that demonstrate inheritance and class concepts.
 
