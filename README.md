@@ -11,7 +11,8 @@ This repository contains Python classes that demonstrate inheritance and class c
    - `class color`: The "color" class was added for the sole purpose of highlighting the subtitles and ordering the data output.
    - `class line`: The line class creates a line from given points.
 
-## Use
+## Rectangle and square code
+
 ```python
 import os
 
@@ -31,26 +32,31 @@ class color:
     End = "\033[0m"
 
     def print_title(title):
-        print(f"{color.Red}{color.Bold}{title.upper()}{color.End}")
+            print(f"{color.Red}{color.Bold}{title.upper()}{color.End}")
 
     def print_subtitle(subtitle):
         print(f"{color.Cyan}{color.Bold}{subtitle}{color.End}")
 
 
-class point:
+class point:    
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
+class line:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
 
-class Rectangle(point):
+class Rectangle(line):
     def __init__(self, width, height, center, method):
+        super().__init__(center, center)
         self.width = width
         self.height = height
         self.center = center
 
         if method == 1:
-            self.center = point(center.x - width/2, center.y - height/2)
+            self.center = point(center.x , center.y)
             self.width = width
             self.height = height
         elif method == 2:
@@ -62,6 +68,15 @@ class Rectangle(point):
             self.upper_right = point(center.x + width/2, center.y + height/2)
             self.width = (center.x + width/2) - (center.x - width/2)
             self.height = (center.y + height/2) - (center.y - height/2)
+        elif method == 4:
+            self.lines = []
+            self.lines.append(line(point(center.x - width/2, center.y - height/2), point(center.x + width/2, center.y - height/2)))
+            self.lines.append(line(point(center.x + width/2, center.y - height/2), point(center.x + width/2, center.y + height/2)))
+            self.lines.append(line(point(center.x + width/2, center.y + height/2), point(center.x - width/2, center.y + height/2)))
+            self.lines.append(line(point(center.x - width/2, center.y + height/2), point(center.x - width/2, center.y - height/2)))
+            
+        
+            
 
     def compute_area(self):
         print(f"\nArea: {self.width * self.height}")
@@ -88,7 +103,13 @@ width = float(input("\nEnter the width of the rectangle: "))
 height = float(input("\nEnter the height of the rectangle: "))
 x = float(input("\nEnter the x coordinate of the center: "))
 y = float(input("\nEnter the y coordinate of the center: "))
-method = int(input("\nEnter the method to create the rectangle (1, 2 or 3): "))
+while True:
+    method = int(input("\nEnter the method to create the rectangle (1, 2, 3 or 4): "))
+    if method == 1 or method == 2 or method == 3 or method == 4:
+        break
+    else:
+        print("\nInvalid method. Please enter a number between 1 and 4.")
+        continue
 center = point(x, y)
 r = Rectangle(width, height, center, method)
 r.compute_area()
@@ -99,6 +120,12 @@ elif method == 2:
     print(f"\nCenter point: {r.center.x , r.center.y}\n")
 elif method == 3:
     print(f"\nOpposite corners: Lower corner = {r.bottom_left.x , r.bottom_left.y} and upper corner = {r.upper_right.x , r.upper_right.y}\n")
+elif method == 4:
+    print(f"\nLine 1: {r.lines[0].start.x, r.lines[0].start.y} - {r.lines[0].end.x, r.lines[0].end.y}\n")
+    print(f"Line 2: {r.lines[1].start.x, r.lines[1].start.y} - {r.lines[1].end.x, r.lines[1].end.y}\n")
+    print(f"Line 3: {r.lines[2].start.x, r.lines[2].start.y} - {r.lines[2].end.x, r.lines[2].end.y}\n")
+    print(f"Line 4: {r.lines[3].start.x, r.lines[3].start.y} - {r.lines[3].end.x, r.lines[3].end.y}\n")
+    
 
 #Punto de interferencia con datos del usuario para rectangulo
 color.print_title("\nPunto de interferencia con datos del usuario")
@@ -112,7 +139,13 @@ color.print_title("\n\n\n\nCreación de cuadrado con datos del usuario")
 side = float(input("\nEnter the side of the square: "))
 x = float(input("\nEnter the x coordinate of the center: "))
 y = float(input("\nEnter the y coordinate of the center: "))
-method = int(input("\nEnter the method to create the square (1, 2 or 3): "))
+while True:
+    method = int(input("\nEnter the method to create the square (1, 2, 3 or 4): "))
+    if method == 1 or method == 2 or method == 3 or method == 4:
+        break
+    else:
+        print("\nInvalid method. Please enter a number between 1 and 4.")
+        continue
 center = point(x, y)
 s = Square(side, center, method)
 s.compute_area()
@@ -123,6 +156,11 @@ elif method == 2:
     print(f"\nCenter point: {s.center.x , s.center.y}\n")
 elif method == 3:
     print(f"\nOpposite corners: Lower corner = {s.bottom_left.x , s.bottom_left.y} and upper corner = {s.upper_right.x , s.upper_right.y}\n")
+elif method == 4:
+    print(f"\nLine 1: {s.lines[0].start.x, s.lines[0].start.y} - {s.lines[0].end.x, s.lines[0].end.y}\n")
+    print(f"Line 2: {s.lines[1].start.x, s.lines[1].start.y} - {s.lines[1].end.x, s.lines[1].end.y}\n")
+    print(f"Line 3: {s.lines[2].start.x, s.lines[2].start.y} - {s.lines[2].end.x, s.lines[2].end.y}\n")
+    print(f"Line 4: {s.lines[3].start.x, s.lines[3].start.y} - {s.lines[3].end.x, s.lines[3].end.y}\n")
 
 #Punto de interferencia con datos del usuario para cuadrado
 color.print_title("\nPunto de interferencia con datos del usuario")
