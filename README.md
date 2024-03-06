@@ -338,38 +338,88 @@ print()
 
 
 # Creación de orden por input del cliente
-c = "ORDERS"
-d = c.center(50, "-")
-print(d)
-
 order1 = order()
-order1.add_item(appetizer1)
-order1.add_item(main_course1)
-order1.add_item(beverage1)
-print("\nORDER 1")
+
+while True:
+    c = "ORDER"
+    d = c.center(50, "-")
+    print(d)
+    print()
+    print("1. Add appetizer")
+    print("2. Add main course")
+    print("3. Add beverage")
+    print("4. Finish order")
+    choice = input("\nEnter your choice: ")
+
+    if choice == "1":
+        print("\nAppetizers:")
+        print("1. Guacamole")
+        print("2. Nachos")
+        print("3. Queso fundido")
+        print("4. Tostadas")
+        appetizer_choice = input("\nEnter appetizer choice: ")
+
+        if appetizer_choice == "1":
+            order1.add_item(appetizer1)
+        elif appetizer_choice == "2":
+            order1.add_item(appetizer2)
+        elif appetizer_choice == "3":
+            order1.add_item(appetizer3)
+        elif appetizer_choice == "4":
+            order1.add_item(appetizer4)
+        else:
+            print("\nInvalid choice. Please try again.")
+
+    elif choice == "2":
+        print("\nMain courses:")
+        print("1. Tacos")
+        print("2. Burrito")
+        print("3. Enchiladas")
+        print("4. Quesadillas")
+        main_course_choice = input("\nEnter main course choice: ")
+
+        if main_course_choice == "1":
+            order1.add_item(main_course1)
+        elif main_course_choice == "2":
+            order1.add_item(main_course2)
+        elif main_course_choice == "3":
+            order1.add_item(main_course3)
+        elif main_course_choice == "4":
+            order1.add_item(main_course4)
+        else:
+            print("\nInvalid choice. Please try again.")
+
+    elif choice == "3":
+        print("\nBeverages:")
+        print("1. Margarita")
+        print("2. Tequila")
+        print("3. Soda")
+        print("4. Water")
+        beverage_choice = input("\nEnter beverage choice: ")
+
+        if beverage_choice == "1":
+            order1.add_item(beverage1)
+        elif beverage_choice == "2":
+            order1.add_item(beverage2)
+        elif beverage_choice == "3":
+            order1.add_item(beverage3)
+        elif beverage_choice == "4":
+            order1.add_item(beverage4)
+        else:
+            print("\nInvalid choice. Please try again.")
+
+    elif choice == "4":
+        break
+
+    else:
+        print("\nInvalid choice. Please try again.")
+
+e = "FINAL ORDER"
+f = e.center(50, "-")
+print(f)
 for item in order1.items:
     print(item)
-print(f"\nTotal: ${order1.calculate_total()}\n")
+print(f"\nTotal: ${order1.calculate_total()}")
 print(f"Total with discount: ${order1.apply_discount()} (10% of discount)\n")
-
-order2 = order()
-order2.add_item(appetizer2)
-order2.add_item(main_course2)
-order2.add_item(beverage2)
-print("\nORDER 2")
-for item in order2.items:
-    print(item)
-print(f"\nTotal: ${order2.calculate_total()}\n")
-print(f"Total with discount: ${order2.apply_discount()} (10% of discount)\n")
-
-order3 = order()
-order3.add_item(appetizer4)
-order3.add_item(main_course4)
-order3.add_item(beverage1)
-print("\nORDER 3")
-for item in order3.items:
-    print(item)
-print(f"\nTotal: ${order3.calculate_total()}\n")
-print(f"Total with discount: ${order3.apply_discount()} (10% of discount)\n")
 ```
 > :shipit: Diego Alejandro Arévalo Guevara. February 27, 2024.
